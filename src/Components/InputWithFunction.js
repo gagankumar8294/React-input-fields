@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Input(){
 
     const [ name, setName ] = useState("");
     const [ lastName ,setLastName ] = useState("");
-   
+    
+    useEffect(() => {
+        document.title = name + " " + lastName;
+    })
+
     return(
         <>
         <div className="section">
